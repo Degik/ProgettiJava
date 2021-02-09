@@ -1,11 +1,5 @@
 package Progetto1;
 
-/*
- * Davide Bulotta
- * Matr. 596782
- * d.bulotta@studenti.unipi.it
- */
-
 import java.util.*;
 
 public class SocialNetwork {
