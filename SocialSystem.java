@@ -1,18 +1,12 @@
 package Progetto1;
 
-/*
- * Davide Bulotta
- * Matr. 596782
- * d.bulotta@studenti.unipi.it
- */
-
 import java.util.*;
 
 public class SocialSystem {
 	//private static final String WELCOME = "Benvenuti nella prima versione del nostro Social Network";
 	private static final String MENU_IN_ADM = "Menu admin v1.0";
 	private static final String MENU_ADM_DETAILS = "Ecco le tue infomazioni account.";
-	private static final String MENU_ADM_INFO = "Come admin non ti Ë permesso da questo account di pubblicare e seguire altro persone";
+	private static final String MENU_ADM_INFO = "Come admin non ti √® permesso da questo account di pubblicare e seguire altro persone";
 	private static final String MENU_ADM_SHOW_USERS = "1. Mostra tutti gli utenti e gli adimin";
 	private static final String MENU_ADM_SHOW_POSTS = "2. Mostra tutti i post";
 	private static final String MENU_ADM_CENSORED_SYSTEM = "3. Sistema di censura";
@@ -21,7 +15,7 @@ public class SocialSystem {
 	//private static final String MENU_CENSORED_OLD_POST_OP1 = "1. Censura i vecchi post";
 	//private static final String MENU_CENSORED_OLD_POST_OP2 = "Censurare i vecchi post?";
 	//private static final String MENU_CENSORED_OLD_POST_OP3 = "Tutti i vecchi post sono stati censurati!";
-	private static final String MENU_CENSORED_TRUE_OP1 = "1. Disabilit‡ il sistema di censura";
+	private static final String MENU_CENSORED_TRUE_OP1 = "1. Disabilit√† il sistema di censura";
 	private static final String MENU_CENSORED_TRUE_OP2 = "Disabilitare la censura?";
 	private static final String MENU_CENSORED_TRUE_OP3 = "Censura disabilitata!";
 	private static final String MENU_CENSORED_FALSE_OP1 = "1. Abilita il sistema di censura";
@@ -75,8 +69,8 @@ public class SocialSystem {
 	private static final String LIST_USER_FOLLOW = "Ecco la lista degli utenti che segui";
 	private static final String LIST_USER_FOLLOW_EMPTY = "Non segui nessuno...";
 	private static final String DELETE_FOLLOW = "1. Smetti di seguire qualcuno";
-	private static final String DELETE_FOLLOW_NAME = "Inserisci il nome dell'utente che non vuoi pi˘ seguire:";
-	private static final String USERNAME_ALREADY_EXIST = "Se lo username inserito Ë gi‡ presente ti verr‡ richiesto di reinserirlo";
+	private static final String DELETE_FOLLOW_NAME = "Inserisci il nome dell'utente che non vuoi pi√π seguire:";
+	private static final String USERNAME_ALREADY_EXIST = "Se lo username inserito √® gi√† presente ti verr√† richiesto di reinserirlo";
 	private static final String CHANGE_EMAIL1 = "2. Modifica email";
 	private static final String CHANGE_EMAIL2 = "Inserisci la nuova email:";
 	private static final String CHANGE_EMAIL3 = "Modifica email riuscita";
@@ -84,12 +78,12 @@ public class SocialSystem {
 	private static final String CHANGE_USERNAME2 = "Inserisci il nuovo username";
 	private static final String CHANGE_USERNAME3 = "Modifica utente riuscita";
 	private static final String SOCIAL_CHECK = "1. Verfica sistema social";
-	private static final String SOCIAL_OK = "Il social Ë ok";
+	private static final String SOCIAL_OK = "Il social √® ok";
 	private static final String SOCIAL_NOT_OK = "Il social non corrisponde con guessFollowers";
 	private static final String ADD_LIKE_ID = "Inserisci id del post a cui vuoi aggiungere il mi piace";
 	private static final String POST_ADD_LIKE = "1. Aggiungi mi piace";
 	private static final String ADD_LIKE_DONE = "Like aggiunto con successo";
-	private static final String ADD_LIKE_FAIL = "Like non aggiunto, evidentemente il post gi‡ ti piaceva";
+	private static final String ADD_LIKE_FAIL = "Like non aggiunto, evidentemente il post gi√† ti piaceva";
 	private static final String POST_RMV_LIKE = "2. Rimuovi un mi piace";
 	private static final String POST_USER = "Post scritto da: ";
 	private static final String RMV_LIKE_DONE = "Like rimosso con successo";
@@ -99,7 +93,7 @@ public class SocialSystem {
 	private static final String SHOW_FL_POSTS_OP1 = "1. Mostra i post pubblicati dagli utenti che segui";
 	private static final String SHOW_FL_POSTS_OP2 = "Ecco la lista dei post...";
 	private static final String SHOW_HIGH_INFLUENCERS = "2. Mostra i top influencers";
-	private static final String INFLUENCERS_LIST_EMPTY = "La classifica Ë vuota";
+	private static final String INFLUENCERS_LIST_EMPTY = "La classifica √® vuota";
 	private static final String TOP_INFLUENCERS_LIST = "Ecco la classifica...";
 	private static final String USER_NOT_FOUND = "Utente non trovato";
 	private static final String ROLE_MODIFY = "2. Modifica ruolo utente";
@@ -177,7 +171,7 @@ public class SocialSystem {
 		}
 	}// loginForm
 	/*
-	 * Questo form Ë dedicato per il login di un utente gi‡ esistente nel sistema
+	 * Questo form √® dedicato per il login di un utente gi√† esistente nel sistema
 	 */
 	
 	public static void newUserForm(AdvancedSocialNetwork sn, Scanner sc) {
@@ -199,7 +193,7 @@ public class SocialSystem {
 		/*if(cap.length()!=5) {
 			throw new IllegalArgumentException("CAP non valido!");
 		}*/
-		System.out.print("Citt‡: ");
+		System.out.print("Citt√†: ");
 		citta = sc.next();
 		System.out.print("Email: ");
 		email = sc.next();
@@ -211,7 +205,7 @@ public class SocialSystem {
 		User us = new User(nome,cognome,username,password,cap,citta,email);
 		sn.registraUtente(us);
 		// Subito dopo aver creato l'utente entra nel menu utente
-		// Verifica se l'untente Ë admin
+		// Verifica se l'untente √® admin
 		if(us.isAdmin()) {
 			menuAdm(sn, us,sc);
 		}else {
@@ -307,7 +301,7 @@ public class SocialSystem {
 				System.out.println(MENU_POST_OP1);	//MENU_POST_OP1 = "Ecco l'elenco dei posts pubblicati da te...";
 				System.out.println();
 				Set<Post> ris = new HashSet<>(sn.getPosts(us));
-				if(ris.size()==0) {// Verifica se l'utente ha gi‡ pubblicato qualcosa
+				if(ris.size()==0) {// Verifica se l'utente ha gi√† pubblicato qualcosa
 					// Nel caso non l'abbia fatto ti conduce in questo piccolo form
 					System.out.println(POSTS_USER_EMPTY);
 					System.out.println();
@@ -583,7 +577,7 @@ public class SocialSystem {
 		}
 	}// menu
 	/*
-	 * Questo Ë il menu utente
+	 * Questo √® il menu utente
 	 * Gestione dell'account ed altro
 	 */
 	
@@ -665,7 +659,7 @@ public class SocialSystem {
 						if(line.toLowerCase().contains("si")) {
 							sn.cerca(name_).setRole(true);	// true lo rende un utente
 							System.out.println(SET_ROLE_DONE);
-							if(us.isAdmin()) {	// se Ë se stesso ad aver cambiato i propri permessi torna al menu per utenti
+							if(us.isAdmin()) {	// se √® se stesso ad aver cambiato i propri permessi torna al menu per utenti
 								Delay(3);
 								menuAdm(sn,us,sc);
 							}else {
@@ -862,7 +856,7 @@ public class SocialSystem {
 				break;
 			case 2:
 				// CONTAINING SYSTEM
-				// Questo stampa i post con la censura sempre disabilitat‡
+				// Questo stampa i post con la censura sempre disabilitat√†
 				System.out.println(CONTAINING_NUMBER);
 				int number = sc.nextInt();
 				sc.nextLine();
@@ -956,7 +950,7 @@ public class SocialSystem {
 		User u3 = new User("Federica", "Monte", "Fede", "12345", "00000", "Roma", "fede@gmail.com");	//3
 		sn.registraUtente(u3);
 		
-		Post p = new Post(0,"Sono stato su Facebook Ë bellissimo",System.currentTimeMillis());
+		Post p = new Post(0,"Sono stato su Facebook √® bellissimo",System.currentTimeMillis());
 		Post p1 = new Post(0,"Le parole fanno male",System.currentTimeMillis());
 		Post p2 = new Post(2, "BlackWord BlackWord", System.currentTimeMillis());
 		
