@@ -1,11 +1,5 @@
 package Progetto1;
 
-/*
- * Davide Bulotta
- * Matr. 596782
- * d.bulotta@studenti.unipi.it
- */
-
 import java.util.*;
 
 // Post genera oggetti mutabili (modifiche sui like consentite)
@@ -26,7 +20,7 @@ public class Post {
 	public Post(int userId, String text, long timestamp) {
 		this.userId = userId;
 		if(text.length() > THRESHOLD)
-			throw new IllegalArgumentException("Testo troppo lungo (più di 140 caratteri).");
+			throw new IllegalArgumentException("Testo troppo lungo (piÃ¹ di 140 caratteri).");
 		this.text = text;
 		this.timestamp = timestamp;
 		this.postId=nextId;
@@ -39,7 +33,7 @@ public class Post {
 	public Post(int postId, int userId, String text, long timestamp) {
 		this.userId = userId;
 		if(text.length() > THRESHOLD)
-			throw new IllegalArgumentException("Testo troppo lungo (più di 140 caratteri).");
+			throw new IllegalArgumentException("Testo troppo lungo (piÃ¹ di 140 caratteri).");
 		this.text = text;
 		this.timestamp = timestamp;
 		this.postId=postId;
