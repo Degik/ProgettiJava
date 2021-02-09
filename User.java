@@ -1,19 +1,13 @@
 package Progetto1;
 
-/*
- * Davide Bulotta
- * Matr. 596782
- * d.bulotta@studenti.unipi.it
- */
-
 // classe immutabile
 public class User {	
 	private static final String ILLEGAL_USN = "Caratteri non validi!";
 	private static final String ILLEGAL_CAP = "CAP non valido!";
 	private static final String ILLEGAL_EML = "Indirizzo email non corretto!";
 	
-	private static final String USERNAME_CONDITION = "@ - ? | = [ ] # § ' ^ + * ° ç ! \" £ $ % & / ( ) ; , : . < > \\ ";
-	//private String USERNAME_CONDITION = " @ - ? | = [ ] # § ' ^ + * ° ç ! £ $ % & / ( ) ; , : . < >";
+	private static final String USERNAME_CONDITION = "@ - ? | = [ ] # Â§ ' ^ + * Â° Ã§ ! \" Â£ $ % & / ( ) ; , : . < > \\ ";
+	//private String USERNAME_CONDITION = " @ - ? | = [ ] # Â§ ' ^ + * Â° Ã§ ! Â£ $ % & / ( ) ; , : . < >";
 	
 	private	String fName;
 	private String lName;
@@ -30,17 +24,17 @@ public class User {
 	public User(String fName, String lName, String username, String password, String pCode, String city, String email) {
 		this.fName=fName;
 		this.lName=lName;
-		//USERNAME_CONDITION = " @-?|=[]#§'^+*°ç!"£$%&/();,:.<>\";
+		//USERNAME_CONDITION = " @-?|=[]#Â§'^+*Â°Ã§!"Â£$%&/();,:.<>\";
 		/*if(username.contains(" ")||username.contains("@")||username.contains("-")||username.contains("?")||	//  @-?
 				username.contains("|")||username.contains("=")||username.contains("[")||username.contains("]")|| // |=[]
-					username.contains("#")||username.contains("§")||username.contains("'")||username.contains("^")|| // #§'^
-						username.contains("+")||username.contains("*")||username.contains("°")||username.contains("ç")|| // +*°ç
-							username.contains("!")||username.contains("\"")||username.contains("£")||username.contains("$")|| // !"£$
+					username.contains("#")||username.contains("Â§")||username.contains("'")||username.contains("^")|| // #Â§'^
+						username.contains("+")||username.contains("*")||username.contains("Â°")||username.contains("Ã§")|| // +*Â°Ã§
+							username.contains("!")||username.contains("\"")||username.contains("Â£")||username.contains("$")|| // !"Â£$
 								username.contains("%")||username.contains("&")||username.contains("/")||username.contains("(")|| // %&/(
 									username.contains(")")||username.contains(";")||username.contains(",")||username.contains(":")|| // );,:
 										username.contains(".")||username.contains("<")||username.contains(">")||username.contains("\\")) // .<>\
 			throw new IllegalArgumentException(ILLEGAL_USN);*/
-		// Il for qui sotto è una soluzione molto più pulita
+		// Il for qui sotto Ã¨ una soluzione molto piÃ¹ pulita
 		
 		String[] s = USERNAME_CONDITION.split(" ");
 		for(int i=0; i<s.length; i++) {
@@ -71,19 +65,19 @@ public class User {
 	public User(int userId, String fName, String lName, String username, String password, String pCode, String city, String email) {
 		this.fName=fName;
 		this.lName=lName;
-		//USERNAME_CONDITION = " @ - ? | = [ ] # § ' ^ + * ° ç ! " £ $ % & / ( ) ; , : . < > \ ";
+		//USERNAME_CONDITION = " @ - ? | = [ ] # Â§ ' ^ + * Â° Ã§ ! " Â£ $ % & / ( ) ; , : . < > \ ";
 		/*if(username.contains(" ")||username.contains("@")||username.contains("-")||username.contains("?")||	//  @-?
 				username.contains("|")||username.contains("=")||username.contains("[")||username.contains("]")|| // |=[]
-					username.contains("#")||username.contains("§")||username.contains("'")||username.contains("^")|| // #§'^
-						username.contains("+")||username.contains("*")||username.contains("°")||username.contains("ç")|| // +*°ç
-							username.contains("!")||username.contains("\"")||username.contains("£")||username.contains("$")|| // !"£$
+					username.contains("#")||username.contains("Â§")||username.contains("'")||username.contains("^")|| // #Â§'^
+						username.contains("+")||username.contains("*")||username.contains("Â°")||username.contains("Ã§")|| // +*Â°Ã§
+							username.contains("!")||username.contains("\"")||username.contains("Â£")||username.contains("$")|| // !"Â£$
 								username.contains("%")||username.contains("&")||username.contains("/")||username.contains("(")|| // %&/(
 									username.contains(")")||username.contains(";")||username.contains(",")||username.contains(":")|| // );,:
 										username.contains(".")||username.contains("<")||username.contains(">")||username.contains("\\")) // .<>\
-			// Il for qui sotto è una soluzione molto più pulita
+			// Il for qui sotto Ã¨ una soluzione molto piÃ¹ pulita
 			throw new IllegalArgumentException(ILLEGAL_USN);*/
 		
-		//String USERNAME_CONDITION = "@ - ? | = [ ] # § ' ^ + * ° ç ! \" £ $ % & / ( ) ; , : . < > \\ ";
+		//String USERNAME_CONDITION = "@ - ? | = [ ] # Â§ ' ^ + * Â° Ã§ ! \" Â£ $ % & / ( ) ; , : . < > \\ ";
 		String[] s = USERNAME_CONDITION.split(" ");
 		for(int i=0; i<s.length; i++) {
 			if(username.contains(s[i]))
@@ -170,7 +164,7 @@ public class User {
 		}else {
 			role = "Utente";
 		}
-		String s = "Dati utente= ([Nome: " + fName + "], [Cognome: " + lName + "], [Username: " + username + "], [email: " + email + "], [CAP: " + pCode + "], [Città: " + city + "], [Ruolo: " + role + "])";
+		String s = "Dati utente= ([Nome: " + fName + "], [Cognome: " + lName + "], [Username: " + username + "], [email: " + email + "], [CAP: " + pCode + "], [CittÃ : " + city + "], [Ruolo: " + role + "])";
 		return s;
 	}
 	
